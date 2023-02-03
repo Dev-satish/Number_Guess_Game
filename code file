@@ -1,0 +1,27 @@
+import random
+print("Welome to the number gussing game! \n I'm thinking of a number between 1 to 100. ")
+level = input("Choose the difficulty level ").lower()
+num = random.randint(1,100)
+
+life = 0
+if level == 'easy':
+    life = 10
+elif level == 'hard':
+    life = 5
+
+while not life == 0:
+    guess = int(input("Enter your guess. "))
+    if num > guess:
+        print("Too low..")
+        life -= 1
+        print(f" \n \nlifes left: {life}")
+    elif num < guess:
+        print("too high..")
+        life -= 1
+        print(f" \n \n lifes left: {life}")
+    elif num == guess:
+        print("Thats correct, you won! ")
+if life == 0:
+    print(f"\n \n Awwwwww, you lost, but you can do it. Try again. \n \n the correct answer was: {num}")
+
+    
